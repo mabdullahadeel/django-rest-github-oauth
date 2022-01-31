@@ -10,14 +10,18 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = [
+    "Django >= 2.0",
+    "djangorestframework >= 3.0",
+    "requests >= 2.0",
+]
 
 test_requirements = ['pytest>=3', ]
 
 setup(
     author="Abdullah Adeel",
     author_email='business.info.abd@gmail.com',
-    python_requires='>=3.6',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -27,13 +31,18 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Framework :: Django',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.0',
+        'Framework :: Django :: 3.1',
+        'Framework :: Django :: 3.2',
+        'Framework :: Django :: 4.0',
     ],
     description="A simple python library to authenticate users with github in Django applications.",
-    entry_points={
-        'console_scripts': [
-            'django_rest_github_oauth=django_rest_github_oauth.cli:main',
-        ],
-    },
+    entry_points={},
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,

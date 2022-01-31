@@ -4,8 +4,6 @@
 
 import pytest
 
-from click.testing import CliRunner
-
 from django_rest_github_oauth import django_rest_github_oauth
 from django_rest_github_oauth import cli
 
