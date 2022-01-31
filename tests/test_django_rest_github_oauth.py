@@ -4,9 +4,6 @@
 
 import pytest
 
-from django_rest_github_oauth import django_rest_github_oauth
-from django_rest_github_oauth import cli
-
 
 @pytest.fixture
 def response():
