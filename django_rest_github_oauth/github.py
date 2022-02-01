@@ -5,7 +5,7 @@ from .models import AUTH_PROVIDER
 from .register import RegisterSocialUser
 
 
-class FGGitHubAuth:
+class GitHubAuth:
     def __init__(self, code):
         self.code: str = code
 
