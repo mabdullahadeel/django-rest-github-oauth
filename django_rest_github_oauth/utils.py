@@ -21,7 +21,7 @@ def id_generator(
     return ''.join(random.choice(chars) for _ in range(size))
 
 
-def save_state_to_db(ip, state):
+def save_state_to_db(ip: str, state: str):
     """
         Save the state to db
     """
