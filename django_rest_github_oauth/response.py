@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.response import Response
 
@@ -24,3 +25,15 @@ class APIResponse:
             },
             status=status_code
         )
+
+
+class UserResponse:
+
+    @staticmethod
+    def get_user_payload(user: User):
+        return {
+            "username": user.username,
+            "email": user.email,
+            "id": user.id,
+            # "token": user.get_tokens()
+        }

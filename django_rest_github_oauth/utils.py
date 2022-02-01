@@ -57,15 +57,3 @@ def get_github_authorization_url(request: HttpRequest, redirect_uri: str):
     )
 
     return authorization_uri
-
-
-class UserResponse:
-
-    @staticmethod
-    def get_user_payload(user):
-        return {
-            "username": user.username,
-            "email": user.email,
-            "id": user.id,
-            # "token": user.get_tokens()
-        }
