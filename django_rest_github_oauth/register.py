@@ -45,7 +45,6 @@ class RegisterSocialUser:
                 email=user_data.get("email"),
                 first_name=first_name,
                 last_name=last_name,
-                auth_provider=provider,
             )
             user.set_password(t_password)
 
