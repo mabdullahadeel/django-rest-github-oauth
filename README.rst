@@ -57,10 +57,10 @@ Using JWT
 .. code-block:: python
 
     INSTALLED_APPS = [
-        ...
+        # ...
         'rest_framework_simplejwt',
         'django_rest_github_oauth',
-        ...
+        # ...
     ]
 
 
@@ -69,12 +69,35 @@ Using Token Authentication
 .. code-block:: python
 
     INSTALLED_APPS = [
-        ...
+        # ...
         'rest_framework.authtoken',
         'django_rest_github_oauth',
-        ...
+        # ...
     ]
 
 
+Then add the following to your ``settings.py``:
+
+.. code-block:: python
+
+    GITHUB_AUTH_KEY = "<your_github_app_key>"
+    GITHUB_AUTH_SECRET = "<your_github_app_secret>"
+    GITHUB_AUTH_USE_JWT = True    # False if you're using token based authentication
+
+    GITHUB_AUTH_CALLBACK_URL = "http://localhost:3000/auth/success/"    # url of the frontend handling redirects from github
+    GITHUB_AUTH_ALLOWED_REDIRECT_URIS = [
+            GITHUB_AUTH_CALLBACK_URL
+        ]
+
+.. note::
+
+    If you have not yet created an app on github, you need to create an app to
+    get the client id and secret. `register app with github`_.
+
+.. warning::
+
+    You need to set the ``GITHUB_AUTH_CALLBACK_URL`` you set on github while creating the app.
+
 .. _djangorestframework token authentication: https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
 .. _djangorestframework simple jwt: https://www.djangorestframework.org-rest-framework-simplejwt.readthedocs.io/en/latest
+.. _register app with github: https://github.com/settings/applications/new
