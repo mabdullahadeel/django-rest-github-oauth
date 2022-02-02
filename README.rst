@@ -129,12 +129,14 @@ To get ``authorizaition_uri``, make a ``GET`` request to the following url::
 
     http://localhost:8000/auth/github?redirect_uri=http://localhost:3000/auth/success/
 
-This will return a payload of the form::
+This will return a payload of the form
+
+.. code-block:: JSON
 
     {
         "data": {
             "authorization_uri": "https://github.com/login/oauth/authorize?client_id=shlf898f7dsfsd0f90wer9fs&redirect_uri=http://localhost:3000/auth/success/&state=dac7944888d140e19280&response_type=code&scope=user:email,read:user"
-        },
+             },
         "message": "success",
         "error": false
     }
