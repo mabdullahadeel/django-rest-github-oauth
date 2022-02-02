@@ -113,6 +113,13 @@ Then add the following to you main ``urls.py`` file.
       # ...
     ]
 
+Run migrations
+
+.. code-block:: bash
+
+    python manage.py makemigrations django_rest_github_oauth
+    python manage.py migrate
+
 That's all you have to do on the backend.
 
 Usage
@@ -166,7 +173,7 @@ Here is a snippet how you can make call using ``axios``.
       state: state,
     };
 
-    const url = "http://127.0.0.1:8000/oauth/github/";
+    const url = "http://127.0.0.1:8000/auth/github/";
 
     axios({
       method: "post",
