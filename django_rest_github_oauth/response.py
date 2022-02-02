@@ -47,8 +47,10 @@ class UserResponse:
             raise ImportError("rest_framework_simplejwt needs to be installed")
         token = RefreshToken.for_user(user)
         return {
-            'access': str(token.access_token),
-            'refresh': str(token)
+            'tokens': {
+                'access': str(token.access_token),
+                'refresh': str(token)
+            }
         }
 
     @staticmethod
