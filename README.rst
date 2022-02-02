@@ -30,12 +30,4 @@ A simple python library to authenticate users with github in Django applications
 Features
 --------
 
-* TODO
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+* `django-rest-github-oauth` is a simple python library that provided `djangorestframework` endpoints to directly call from your frontend independent of the framework being used on the frontend.
