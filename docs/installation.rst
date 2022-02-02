@@ -1,4 +1,6 @@
-.. highlight:: shell
+.. highlight:: shell:
+
+.. _target to installation:
 
 ============
 Installation
@@ -32,13 +34,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/mabdullahadeel/django_rest_github_oauth
+    $ git clone git://github.com/mabdullahadeel/django-rest-github-oauth
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/mabdullahadeel/django_rest_github_oauth/tarball/master
+    $ curl -OJL https://github.com/mabdullahadeel/django-rest-github-oauth/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +49,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/mabdullahadeel/django_rest_github_oauth
-.. _tarball: https://github.com/mabdullahadeel/django_rest_github_oauth/tarball/master
+.. _Github repo: https://github.com/mabdullahadeel/django-rest-github-oauth
+.. _tarball: https://github.com/mabdullahadeel/django-rest-github-oauth/tarball/master

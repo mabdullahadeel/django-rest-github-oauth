@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Abdullah Adeel <business.info.abd@gmail.com>
+* Abdullah Adeel (https://github.com/mabdullahadeel)
 
 Contributors
 ------------
