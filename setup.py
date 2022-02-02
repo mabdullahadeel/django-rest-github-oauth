@@ -47,7 +47,7 @@ setup(
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='django_rest_github_oauth',
+    keywords=['django_rest_github_oauth', 'django', 'github', 'oauth', 'rest', 'restframework'],
     name='django-rest-github-oauth',
     packages=find_packages(include=['django_rest_github_oauth', 'django_rest_github_oauth.*']),
     test_suite='tests',
