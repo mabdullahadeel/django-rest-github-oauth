@@ -52,7 +52,7 @@ setup(
     packages=find_packages(include=['django_rest_github_oauth', 'django_rest_github_oauth.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/mabdullahadeel/django_rest_github_oauth',
+    url='https://github.com/mabdullahadeel/django-rest-github-oauth',
     version='0.1.0',
     zip_safe=False,
 )

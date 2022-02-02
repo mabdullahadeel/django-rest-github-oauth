@@ -75,6 +75,10 @@ Using Token Authentication
         # ...
     ]
 
+.. note::
+    * If you are using Token Authentication, please header over to `djangorestframework token authentication`_ and add related settings to your ``settings.py``
+
+    * If you are using JWT Authentication, please header over to `djangorestframework simple jwt`_ and add related settings to your ``settings.py``
 
 Then add the following to your ``settings.py``:
 
@@ -96,7 +100,20 @@ Then add the following to your ``settings.py``:
 
 .. warning::
 
-    You need to set the ``GITHUB_AUTH_CALLBACK_URL`` you set on github while creating the app.
+    You need to set the ``GITHUB_AUTH_CALLBACK_URL`` the same value you set on **github** while creating the app.
+
+Then add the following to you main ``urls.py`` file.
+
+.. code-block:: python
+
+    urlpatterns = [
+      # ...
+      path('admin/', admin.site.urls),
+      path('auth/github/', include('django_rest_github_oauth.urls')),
+      # ...
+    ]
+
+That's all you have to do on the backend.
 
 .. _djangorestframework token authentication: https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
 .. _djangorestframework simple jwt: https://www.djangorestframework.org-rest-framework-simplejwt.readthedocs.io/en/latest
