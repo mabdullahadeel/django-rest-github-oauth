@@ -34,7 +34,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/mabdullahadeel/django_rest_github_oauth
+    $ git clone git://github.com/mabdullahadeel/django-rest-github-oauth
 
 Or download the `tarball`_:
 

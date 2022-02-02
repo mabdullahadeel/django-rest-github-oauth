@@ -5,15 +5,15 @@ django-rest-github-oauth
 .. image:: https://img.shields.io/pypi/v/django_rest_github_oauth.svg
         :target: https://pypi.python.org/pypi/django_rest_github_oauth
 
-.. image:: https://img.shields.io/travis/mabdullahadeel/django_rest_github_oauth.svg
-        :target: https://travis-ci.com/mabdullahadeel/django_rest_github_oauth
+.. image:: https://img.shields.io/travis/mabdullahadeel/django-rest-github-oauth.svg
+        :target: https://travis-ci.com/mabdullahadeel/django-rest-github-oauth
 
 .. image:: https://readthedocs.org/projects/django-rest-github-oauth/badge/?version=latest
         :target: https://django-rest-github-oauth.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/mabdullahadeel/django_rest_github_oauth/shield.svg
-     :target: https://pyup.io/repos/github/mabdullahadeel/django_rest_github_oauth/
+.. image:: https://pyup.io/repos/github/mabdullahadeel/django-rest-github-oauth/shield.svg
+     :target: https://pyup.io/repos/github/mabdullahadeel/django-rest-github-oauth/
      :alt: Updates
 
 
@@ -114,6 +114,70 @@ Then add the following to you main ``urls.py`` file.
     ]
 
 That's all you have to do on the backend.
+
+Usage
+######
+
+To get ``authorizaition_uri``, make a ``GET`` request to the following url::
+
+    http://localhost:8000/auth/github?redirect_uri=http://localhost:3000/auth/success/
+
+This will return a payload of the form::
+
+    {
+        "data": {
+            "authorization_uri": "https://github.com/login/oauth/authorize?client_id=shlf898f7dsfsd0f90wer9fs&redirect_uri=http://localhost:3000/auth/success/&state=dac7944888d140e19280&response_type=code&scope=user:email,read:user"
+        },
+        "message": "success",
+        "error": false
+    }
+
+Redirect your user to ``authorization_uri``.
+
+Then, after the user has authorized your app, they will be redirected to the ``GITHUB_AUTH_CALLBACK_URL`` you specified with two query parameters:
+
+* ``code``
+* ``state``
+
+In your frontend javascript, read those query parameters. Here is a quick snippet how you can achieve that.
+
+.. code-block:: javascript
+
+    const query = new URLSearchParams(window.location.search);
+    const code = query.get("code");
+    const state = query.get("state");
+
+Then make a ``POST`` request to the following url with ``code`` and ``state`` in the request body::
+
+    http://localhost:8000/auth/github
+
+The reuturn payload will have user informations and appropriate tokens.
+
+Here is a snippet how you can make call using ``axios``.
+
+.. code-block:: javascript
+
+    const query = new URLSearchParams(window.location.search);
+    const code = query.get("code");
+    const state = query.get("state");
+
+    const details = {
+      code: code,
+      state: state,
+    };
+
+    const url = "http://127.0.0.1:8000/oauth/github/";
+
+    axios({
+      method: "post",
+      url: url,
+      data: details,
+      })
+      .then((response) => {
+        console.log(response)
+        // login the user and save token for further request to the backend
+      })
+      .catch((err) => console.log(err));
 
 .. _djangorestframework token authentication: https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
 .. _djangorestframework simple jwt: https://www.djangorestframework.org-rest-framework-simplejwt.readthedocs.io/en/latest
