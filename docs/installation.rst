@@ -1,4 +1,6 @@
-.. highlight:: shell
+.. highlight:: shell:
+
+.. _target to installation:
 
 ============
 Installation

@@ -1,11 +1,21 @@
 Welcome to django-rest-github-oauth's documentation!
 =====================================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+A simple python library to authenticate users with github in Django applications.
 
-   readme
+Features
+########
+
+**django-rest-github-oauth** is a simple python library that provides `djangorestframework` endpoints to directly call
+from your frontend independent of the framework being used on the frontend.
+
+Contents:
++++++++++
+
+.. toctree::
+   :maxdepth: 3
+
+   Getting Started<readme>
    installation
    usage
    contributing
