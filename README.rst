@@ -42,7 +42,7 @@ Install the package in your python environment using ``pip``.
         pip install django-rest-github-oauth
 
 
-For detailed information regarding the installation, see the :ref:`installation guide <target to installation>`.
+For detailed information regarding the installation, see the `installation guide`_.
 
 Then your django project must be configured to use the library. For that include it
 in ``INSTALLED_APPS`` of your ``settings.py``. Besides that, you will have to include the auth handler app in installed apps.
@@ -191,3 +191,4 @@ Here is a snippet how you can make call using ``axios``.
 .. _djangorestframework token authentication: https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
 .. _djangorestframework simple jwt: https://www.djangorestframework.org-rest-framework-simplejwt.readthedocs.io/en/latest
 .. _register app with github: https://github.com/settings/applications/new
+.. _installation guide: https://django-rest-github-oauth.readthedocs.io/en/latest/installation.html

@@ -14,7 +14,7 @@ To install django-rest-github-oauth, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install django_rest_github_oauth
+    $ pip install django-rest-github-oauth
 
 This is the preferred method to install django-rest-github-oauth, as it will always install the most recent stable release.
 
