@@ -52,30 +52,28 @@ Currently, ``django-rest-github-oauth`` supports the following authentication ba
 * Token Authentication using `djangorestframework token authentication`_
 * JWT Authentication using `djangorestframework simple jwt`_
 
+Using JWT
 
-.. tabs::
+.. code-block:: python
 
-   .. tab:: JWT Authentication
+    INSTALLED_APPS = [
+        ...
+        'rest_framework_simplejwt',
+        'django_rest_github_oauth',
+        ...
+    ]
 
-      .. code-block:: python
 
-        INSTALLED_APPS = [
-            ...
-            'rest_framework_simplejwt',
-            'django_rest_github_oauth',
-            ...
-        ]
+Using Token Authentication
 
-   .. tab:: Token Authentication
+.. code-block:: python
 
-      .. code-block:: python
-
-        INSTALLED_APPS = [
-            ...
-            'rest_framework.authtoken',
-            'django_rest_github_oauth',
-            ...
-        ]
+    INSTALLED_APPS = [
+        ...
+        'rest_framework.authtoken',
+        'django_rest_github_oauth',
+        ...
+    ]
 
 
 .. _djangorestframework token authentication: https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
