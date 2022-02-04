@@ -117,7 +117,6 @@ Run migrations
 
 .. code-block:: bash
 
-    python manage.py makemigrations django_rest_github_oauth
     python manage.py migrate
 
 That's all you have to do on the backend.
