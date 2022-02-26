@@ -5,6 +5,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from rest_framework.exceptions import AuthenticationFailed
 
+from django_rest_github_oauth.signals import github_user_created
+
 from .models import GitHubAccount
 from .response import UserResponse
 from .utils import id_generator
@@ -24,7 +26,7 @@ class RegisterSocialUser:
     def get_names(user_data: dict) -> Tuple:
         name: str = user_data.get("name")
         names: list = name.split(" ")
-        return names[0], names[1]
+        return names[0], names[1] if len(names) > 1 else ""
 
     def register_social_user(provider: str, user_data: dict) -> str:
         filtering_by_email = get_user_model().objects.filter(email=user_data.get("email"))
@@ -50,4 +52,5 @@ class RegisterSocialUser:
 
             GitHubAccount.objects.create(user=user).save()
             user.save()
+            github_user_created.send(sender=None, user=user)
             return UserResponse.get_user_payload(user)
