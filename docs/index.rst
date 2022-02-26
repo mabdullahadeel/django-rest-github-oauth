@@ -17,7 +17,7 @@ Contents:
 
    Getting Started<readme>
    installation
-   usage
+   signals
    contributing
    authors
    history
